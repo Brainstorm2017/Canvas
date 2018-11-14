@@ -14,6 +14,7 @@
 		64A22460219CBFE00066EB28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A2245E219CBFE00066EB28 /* LaunchScreen.storyboard */; };
 		64A2246B219CBFE00066EB28 /* CanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A2246A219CBFE00066EB28 /* CanvasTests.swift */; };
 		64A22476219CBFE00066EB28 /* CanvasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A22475219CBFE00066EB28 /* CanvasUITests.swift */; };
+		64A22485219CC2910066EB28 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A22484219CC2910066EB28 /* CanvasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		64A22471219CBFE00066EB28 /* CanvasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanvasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A22475219CBFE00066EB28 /* CanvasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasUITests.swift; sourceTree = "<group>"; };
 		64A22477219CBFE00066EB28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64A22484219CC2910066EB28 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		64A22454219CBFDD0066EB28 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				64A22483219CC24A0066EB28 /* New Group */,
 				64A22455219CBFDD0066EB28 /* AppDelegate.swift */,
 				64A22457219CBFDD0066EB28 /* ViewController.swift */,
 				64A22459219CBFDD0066EB28 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				64A22477219CBFE00066EB28 /* Info.plist */,
 			);
 			path = CanvasUITests;
+			sourceTree = "<group>";
+		};
+		64A22483219CC24A0066EB28 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				64A22484219CC2910066EB28 /* CanvasViewController.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A22458219CBFDD0066EB28 /* ViewController.swift in Sources */,
+				64A22485219CC2910066EB28 /* CanvasViewController.swift in Sources */,
 				64A22456219CBFDD0066EB28 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
