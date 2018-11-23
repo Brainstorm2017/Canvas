@@ -11,7 +11,10 @@ import UIKit
 class CanvasViewController: UIViewController {
 
     @IBOutlet weak var trayView: UIView!
-    swift var trayOriginalCenter: CGPoint!
+    var trayOriginalCenter: CGPoint!
+    var trayDownOffset: CGFloat!
+    var trayUp: CGPoint!
+    var trayDown: CGPoint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,19 +23,31 @@ class CanvasViewController: UIViewController {
         trayDown = CGPoint(x: trayView.center.x ,y: trayView.center.y + trayDownOffset)
     }
         // Do any additional setup after loading the view.
-    }
+    
     
 
-    @IBAction func didPanTray(_ sender: UIPanGestureRecognizer)
+    @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
     
     let translation = sender.translation(in: view)
     var velocity = sender.velocity(in: view)
-    
-    if sender.state == .began {
+    var newlyCreatedFace: UIImageView!
+        
+   var imageView = sender.view as! UIImageView
+    newlyCreatedFace = UIImageView(image: imageView.image)
+   view.addSubview(newlyCreatedFace)
+        newlyCreatedFace.center = imageView.center
+        newlyCreatedFace.center.y += trayView.frame.origin.y
+        
+        
+        var newlyCreatedFaceOriginalCenter: CGPoint!
+        
+        
+        if sender.state == .began {
+            newlyCreatedFaceOriginalCenter = newlyCreatedFace.center
     print("Gesture began")
     trayOriginalCenter = trayView.center
     } else if sender.state == .changed {
-    print("Gesture is changing")
+            newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y);    print("Gesture is changing")
     trayView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y + translation.y)
     } else if sender.state == .ended {
     print("Gesture ended")
@@ -47,7 +62,7 @@ class CanvasViewController: UIViewController {
     }
     
     }
-
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,4 +71,7 @@ class CanvasViewController: UIViewController {
     }
 
 
-
+    @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
+    }
+    
+}
