@@ -18,6 +18,7 @@ class CanvasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        newlyCreatedFace.userInteractionEnabled = true
         trayDownOffset = 160
         trayUp = trayView.center // The initial position of the tray
         trayDown = CGPoint(x: trayView.center.x ,y: trayView.center.y + trayDownOffset)
@@ -74,4 +75,19 @@ class CanvasViewController: UIViewController {
     @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
     }
     
+}
+
+func didPaTray(sender: UIPanGestureRecognizer) {
+    var location = sender.location(in: view)
+    var velocity = sender.velocity(in: view)
+    let translation = sender.translation(in: view)
+    
+    if sender.state == .began {
+        newlyCreatedFace = sender.view as! UIImageView // to get the face that we panned on.
+        newlyCreatedFaceOriginalCenter = newlyCreatedFace.center // so we can offset by translation later.        print("Gesture began")
+    } else if sender.state == .changed {
+        newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)        print("Gesture is changing")
+    } else if sender.state == .ended {
+        print("Gesture ended")
+    }
 }
