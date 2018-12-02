@@ -107,7 +107,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7g-E0-dj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="LTD-Ad-EQT">
                     <connections>
-                        <action selector="didPanFace:" destination="4WT-ab-MYi" id="bR8-Rl-XcM"/>
+                        <action selector="didPanTray:" destination="4WT-ab-MYi" id="xwI-iC-xzR"/>
                     </connections>
                 </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Yo3-4w-h9c">
